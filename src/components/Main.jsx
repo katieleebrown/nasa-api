@@ -1,19 +1,12 @@
 import { useState, useEffect } from "react";
 
 function Main(props) {
-    const [photo, setPhoto] = useState({
-        photo: "",
-        name: "",
-        date: "",
-        description: "",
-        copyright: "",
-        mediaType: ""
-    })
+    const [photo, setPhoto] = useState({})
 
     useEffect(() => {
         fetch(`https://api.nasa.gov/planetary/apod?api_key=veITwoMdS2sBK7aaxe0IJGKKAqqKjgaeLRcLQDtw`)
             .then(res => res.json())
-            .then(data => setPhoto(prevPhoto => {
+            .then(data => setPhoto(() => {
                 return {
                     photo: data.url,
                     name: data.title,
