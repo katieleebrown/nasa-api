@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 function Main(props) {
     const [photo, setPhoto] = useState({
@@ -10,18 +10,20 @@ function Main(props) {
         mediaType: ""
     })
 
-    fetch(`https://api.nasa.gov/planetary/apod?api_key=veITwoMdS2sBK7aaxe0IJGKKAqqKjgaeLRcLQDtw`)
-        .then(res => res.json())
-        .then(data => setPhoto(prevPhoto => {
-            return {
-                photo: data.url,
-                name: data.title,
-                date: data.date,
-                description: data.explanation,
-                copyright: data.copyright,
-                mediaType: data.media_type
-            }
-        }))
+    useEffect(() => {
+        fetch(`https://api.nasa.gov/planetary/apod?api_key=veITwoMdS2sBK7aaxe0IJGKKAqqKjgaeLRcLQDtw`)
+            .then(res => res.json())
+            .then(data => setPhoto(prevPhoto => {
+                return {
+                    photo: data.url,
+                    name: data.title,
+                    date: data.date,
+                    description: data.explanation,
+                    copyright: data.copyright,
+                    mediaType: data.media_type
+                }
+            }))
+    })
 
     return (
         <main className={props.darkMode ? "dark" : ""}>
