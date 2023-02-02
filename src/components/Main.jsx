@@ -1,10 +1,18 @@
 import { useState, useEffect } from "react";
+const apikey = process.env.API_KEY
 
 function Main(props) {
-    const [photo, setPhoto] = useState({})
+    const [photo, setPhoto] = useState({
+        photo: '',
+        name: '',
+        date: '',
+        description: '',
+        copyright: '',
+        mediaType: ''
+    })
 
     useEffect(() => {
-        fetch(`https://api.nasa.gov/planetary/apod?api_key=veITwoMdS2sBK7aaxe0IJGKKAqqKjgaeLRcLQDtw`)
+        fetch(`https://api.nasa.gov/planetary/apod?api_key=${apikey}`)
             .then(res => res.json())
             .then(data => setPhoto(() => {
                 return {
