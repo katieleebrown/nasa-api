@@ -3,8 +3,10 @@ import { useState } from "react";
 function Navbar(props) {
     return (
         <nav className={props.darkMode ? "dark" : ""}>
-            <img className="nav--logo_icon" src="" alt="" />
-            <h3>NASA Daily</h3>
+            <div className="nav--left">
+                <img className="nav--logo_icon" src="" alt="" />
+                <h3 className="nav--title">NASA Daily</h3>
+            </div>
 
             <div className="toggler">
                 <p className="toggler--light">Light</p>

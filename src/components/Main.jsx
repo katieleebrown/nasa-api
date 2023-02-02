@@ -16,17 +16,17 @@ function Main(props) {
                     mediaType: data.media_type
                 }
             }))
-    })
+    }, [])
 
     return (
         <main className={props.darkMode ? "dark" : ""}>
             <div className="photo--card">
                 <h1>NASA's Astronomy Photo of the Day</h1>
-                <p>{photo.date}</p>
-                <img src={photo.photo} alt={photo.name} />
-                <h3>{photo.name}</h3>
+                <h3>Date: {photo.date}</h3>
+                <img className="apod--image" src={photo.photo} alt={photo.name} />
+                <h3>Title: {photo.name}</h3>
                 <small>Photo Credit: {photo.copyright}</small>
-                <p>{photo.description}</p>
+                <p className="apod-desc">Description: {photo.description}</p>
             </div>
         </main>
     )
