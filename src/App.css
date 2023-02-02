@@ -129,14 +129,15 @@ main.dark {
 
 .apod--image {
   border-radius: 5px;
-  width: auto;
+  width: 85%;
   height: auto;
   max-width: 1000px;
   margin: auto;
 }
 
 .apod--desc {
-  width: 80%;
+  width: 90%;
   line-height: 2;
   padding: 15px;
+  font-size: smaller;
 }

@@ -34,7 +34,7 @@ function Main(props) {
                 <img className="apod--image" src={photo.photo} alt={photo.name} />
                 <h3>Title: {photo.name}</h3>
                 <small>Photo Credit: {photo.copyright}</small>
-                <p className="apod--desc">Description: {photo.description}</p>
+                <p className="apod--desc">{photo.description}</p>
             </div>
         </main>
     )
