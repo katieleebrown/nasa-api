@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
-const apikey = process.env.API_KEY
 
 function Main(props) {
+    const apikey = import.meta.env.VITE_API_KEY
     const [photo, setPhoto] = useState({
         photo: '',
         name: '',
@@ -34,7 +34,7 @@ function Main(props) {
                 <img className="apod--image" src={photo.photo} alt={photo.name} />
                 <h3>Title: {photo.name}</h3>
                 <small>Photo Credit: {photo.copyright}</small>
-                <p className="apod-desc">Description: {photo.description}</p>
+                <p className="apod--desc">Description: {photo.description}</p>
             </div>
         </main>
     )

@@ -99,7 +99,8 @@ nav.dark .toggler--slider {
 
 /* Main Section */
 main {
-  height: 100vh;
+  min-height: 100vh;
+  height: auto;
   width: 100%;
   padding-top: 75px;
 }
@@ -136,5 +137,6 @@ main.dark {
 
 .apod--desc {
   width: 80%;
-  line-height: 1.5;
+  line-height: 2;
+  padding: 15px;
 }
